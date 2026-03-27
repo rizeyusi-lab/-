@@ -1,0 +1,12 @@
+a1 = input()
+a2 = input()
+#print(a1)
+#print(a2)
+print(a1,'+', a2 ,'=', int(a1) + int(a2))
+print(a1, '-' , a2 ,'=', int(a1)-int(a2))
+print(a1, '*' , a2 , '=', int(a1)*int(a2))
+print(a1, '/' ,a2 , '=', int(a1)/int(a2) )
+print(a1, '//' ,a2 , '=', int(a1)//int(a2))
+print(a1, '%' , a2 , '=', int(a1)%int(a2))
+print(a1 , '**', a2 , '=', int(a1)**int(a2))
+
