@@ -29,3 +29,4 @@ for i in range(len(lst)):
     if i==reali or i==realj:
         continue
     print(lst[i])
+    
