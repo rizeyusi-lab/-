@@ -1,4 +1,3 @@
-from token import NAME
 import oracledb
 
 # 데이터베이스 접속 정보 설정
@@ -8,7 +7,7 @@ conn = oracledb.connect(user="c##mbc", password="qwer1234", dsn=dsn)
 # 쿼리 실행을 위한 커서 생성
 cursor = conn.cursor()
 
-#테이블 생성
+# 테이블 생성
 # try:
 #     cursor.execute("""
 #         CREATE TABLE test_table (
@@ -28,30 +27,28 @@ cursor = conn.cursor()
 # except oracledb.DatabaseError as e:
 #     print(f"Error inserting data: {e}")
 
-
 # SELECT 예제
+# try:
+#     cursor.execute("SELECT * FROM test_table")
+#     for row in cursor:
+#         print(row)
+# except oracledb.DatabaseError as e:
+#     print(f"Error fetching data: {e}")
+
+# SELECT - emp table
+name = input("Input name...")
+print(name)
+
 try:
-    cursor.execute("SELECT * FROM test_table")
-    for row in cursor:
-        print(row)
-except oracledb.DatabaseError as e:
-    print(f"Error fetching data: {e}")
+    select_query = "SELECT * FROM emp WHERE ename='" + name.upper() + "'"
+    print(select_query)
 
-
-#select - emp table
-name = input("input name...")
-print(name) 
-
-try:
-    SELECT_QUERY = "SELECT * FROM EMP WHERE ENAME='" + name.upper() + "'"
-    print(SELECT_QUERY)
-
-    cursor.execute(SELECT_QUERY)
+    cursor.execute(select_query)
     for row in cursor:
         print(row)
 except oracledb.DatabaseError as e:
     print(f"Error fetching data: {e}")
 
 # 커서 및 커넥션 닫기
-# cursor.close()
-# conn.close()
+cursor.close()
+conn.close()

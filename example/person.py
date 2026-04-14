@@ -10,4 +10,7 @@ class Person:
         self.deptno = deptno
 
     def print_person(self):
-        print(f"{self.empno} : {self.ename}")
+        if self.sal is not None:
+            print(f"{self.empno} : {self.ename:>10} : {int(self.sal):>7}")
+        else:
+            print(f"{self.empno} : {self.ename:>10} :       0")
