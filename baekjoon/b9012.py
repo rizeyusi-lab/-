@@ -33,3 +33,24 @@ for x in range(t):
         print("YES")
     else:
         print("NO")
+#----------------------------
+T = int(input())
+
+for i in range(T):
+    inp = input()
+    lst = []
+    res = True;
+
+    for j in inp:
+        print(j, end="")
+        if j=="(":
+            lst.append(j)
+        else:
+            if len(lst) != 0:
+                lst.pop()
+            else:
+                res = False
+    if len(lst)==0 and res==True:
+        print("YES")
+    else:
+        print("NO")
